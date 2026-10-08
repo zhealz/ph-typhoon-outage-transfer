@@ -1,0 +1,25 @@
+model,features,event,n,Moran's I,p-value
+Logistic regression,Hazard,kammuri_2019,181,0.086,0.015
+Logistic regression,Hazard,mangkhut_2018,67,-0.055,0.707
+Logistic regression,Hazard,phanfone_2019,131,0.141,0.006
+Logistic regression,Hazard,rai_2021,165,0.395,0.001
+Logistic regression,Hazard + exposure,kammuri_2019,181,0.138,0.001
+Logistic regression,Hazard + exposure,mangkhut_2018,67,0.1,0.042
+Logistic regression,Hazard + exposure,phanfone_2019,131,0.131,0.009
+Logistic regression,Hazard + exposure,rai_2021,165,0.429,0.001
+Logistic regression,Hazard + exposure + embeddings,kammuri_2019,181,0.199,0.001
+Logistic regression,Hazard + exposure + embeddings,mangkhut_2018,67,-0.053,0.731
+Logistic regression,Hazard + exposure + embeddings,phanfone_2019,131,0.154,0.003
+Logistic regression,Hazard + exposure + embeddings,rai_2021,165,0.516,0.001
+Gradient boosting,Hazard,kammuri_2019,181,0.117,0.002
+Gradient boosting,Hazard,mangkhut_2018,67,-0.006,0.408
+Gradient boosting,Hazard,phanfone_2019,131,0.14,0.004
+Gradient boosting,Hazard,rai_2021,165,0.407,0.001
+Gradient boosting,Hazard + exposure,kammuri_2019,181,0.108,0.004
+Gradient boosting,Hazard + exposure,mangkhut_2018,67,-0.022,0.507
+Gradient boosting,Hazard + exposure,phanfone_2019,131,0.164,0.001
+Gradient boosting,Hazard + exposure,rai_2021,165,0.381,0.001
+Gradient boosting,Hazard + exposure + embeddings,kammuri_2019,181,0.119,0.002
+Gradient boosting,Hazard + exposure + embeddings,mangkhut_2018,67,-0.082,0.869
+Gradient boosting,Hazard + exposure + embeddings,phanfone_2019,131,0.171,0.001
+Gradient boosting,Hazard + exposure + embeddings,rai_2021,165,0.495,0.001

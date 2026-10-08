@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this code or its results, please cite it as below."
+title: "Who stays dark longest? Predicting power recovery after Philippine typhoons"
+type: software
+authors:
+  - family-names: Zhuang
+    given-names: Zixiao
+    affiliation: "Middlebury Institute of International Studies at Monterey"
+date-released: 2026-09-30
+license: MIT
+keywords:
+  - nighttime lights
+  - power outages
+  - tropical cyclones
+  - GeoAI
+  - spatial cross-validation
+  - Philippines

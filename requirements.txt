@@ -1,0 +1,5 @@
+# For scripts/make_brief_figures.py. The notebooks install their own dependencies in Colab.
+pandas>=2.0
+numpy>=1.24
+geopandas>=0.14
+matplotlib>=3.7

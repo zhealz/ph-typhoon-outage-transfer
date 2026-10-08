@@ -1,0 +1,9 @@
+Parsed from Wikipedia: 152 utilities, 1679 utility–municipality pairs; share of utilities whose item count matches 'List (N)': 99%
+Share of modelling municipalities matched to a utility: 99%; municipalities with several utilities: 61; unmatched names: 26
+Municipalities matched per utility: median 10, utilities with only 1 matched municipality: 17 / 144
+event
+kammuri_2019     100.0
+mangkhut_2018    100.0
+phanfone_2019     99.0
+rai_2021          99.0
+Unmatched examples: [('AKELCO', 'Sapian', 0), ('ANTECO', 'San Jose de Buenavista', 0), ('BUSECO', 'Impasugong', 0), ('Bumbaran', 'Amai Manabilang', 0), ('CAPELCO', 'Sapian', 0), ('CEBECO III', 'Pinamungajan', 0), ('COTELCO – PPALMA', 'Pigcawayan', 0), ('DLPC', 'Sawata', 0), ('FIBECO', 'Amai Manabilang', 0), ('HFMPC', 'Eastern Samar', 0), ('LANECO', 'Balo-i', 0), ('LASURECO', 'Balo-i', 0), ('MAGELCO', 'Datu Montawal', 0), ('MASELCO', 'Pio V. Corpus', 0), ('MERALCO', 'Bulakan', 0)]

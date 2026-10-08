@@ -1,0 +1,29 @@
+label,model,set,LOTO AUC,CI low,CI high,diff vs H,diff CI low,diff CI high,random-split AUC,transfer loss,differs from H?
+calibrated,Logistic regression,H,0.7852,0.7261,0.841,0.0,0.0,0.0,0.8274,0.0422,—
+calibrated,Logistic regression,H+Sgeo,0.7961,0.7385,0.8517,0.0107,-0.0008,0.0235,0.8371,0.041,no clear difference
+calibrated,Logistic regression,H+S,0.7268,0.6623,0.7906,-0.0589,-0.0903,-0.0269,0.83,0.1032,worse
+calibrated,Logistic regression,H+E,0.7307,0.6706,0.7886,-0.0544,-0.085,-0.027,0.8204,0.0898,worse
+calibrated,Logistic regression,H+E+S,0.6731,0.609,0.7385,-0.1119,-0.155,-0.071,0.8259,0.1528,worse
+calibrated,Logistic regression,H+E+Emb3,0.7033,0.6429,0.7634,-0.0812,-0.1213,-0.0453,0.8174,0.1141,worse
+calibrated,Logistic regression,H+E+Emb10,0.7008,0.6426,0.7621,-0.0842,-0.1197,-0.049,0.8137,0.1128,worse
+calibrated,Gradient boosting,H,0.759,0.7009,0.8081,0.0,0.0,0.0,0.8214,0.0624,—
+calibrated,Gradient boosting,H+Sgeo,0.7029,0.6411,0.7599,-0.0559,-0.0882,-0.0223,0.8229,0.12,worse
+calibrated,Gradient boosting,H+S,0.6884,0.6247,0.7469,-0.0701,-0.1017,-0.0378,0.8223,0.1339,worse
+calibrated,Gradient boosting,H+E,0.7731,0.7203,0.8224,0.015,-0.0193,0.0477,0.8284,0.0553,no clear difference
+calibrated,Gradient boosting,H+E+S,0.7443,0.6874,0.7954,-0.0139,-0.0491,0.0269,0.8314,0.0871,no clear difference
+calibrated,Gradient boosting,H+E+Emb3,0.7356,0.6809,0.7939,-0.0223,-0.0644,0.0166,0.8375,0.1019,no clear difference
+calibrated,Gradient boosting,H+E+Emb10,0.7155,0.6649,0.7736,-0.0417,-0.0882,0.0016,0.8287,0.1132,no clear difference
+step 3,Logistic regression,H,0.7581,0.7065,0.8092,0.0,0.0,0.0,,,—
+step 3,Logistic regression,H+Sgeo,0.7632,0.7109,0.8151,0.0051,-0.0012,0.0116,,,no clear difference
+step 3,Logistic regression,H+S,0.6963,0.6375,0.751,-0.0621,-0.0938,-0.0302,,,worse
+step 3,Logistic regression,H+E,0.689,0.6313,0.7471,-0.0697,-0.1029,-0.038,,,worse
+step 3,Logistic regression,H+E+S,0.6527,0.593,0.7098,-0.1063,-0.1497,-0.0621,,,worse
+step 3,Logistic regression,H+E+Emb3,0.6893,0.6333,0.7454,-0.0693,-0.1044,-0.0366,,,worse
+step 3,Logistic regression,H+E+Emb10,0.672,0.6179,0.7273,-0.0865,-0.1207,-0.0523,,,worse
+step 3,Gradient boosting,H,0.7328,0.6829,0.7849,0.0,0.0,0.0,,,—
+step 3,Gradient boosting,H+Sgeo,0.743,0.6979,0.788,0.0102,-0.0124,0.0345,,,no clear difference
+step 3,Gradient boosting,H+S,0.7524,0.7055,0.8004,0.019,-0.0101,0.0507,,,no clear difference
+step 3,Gradient boosting,H+E,0.7202,0.6716,0.7684,-0.0124,-0.0489,0.0236,,,no clear difference
+step 3,Gradient boosting,H+E+S,0.7209,0.6714,0.7692,-0.0121,-0.0559,0.0291,,,no clear difference
+step 3,Gradient boosting,H+E+Emb3,0.7014,0.6497,0.751,-0.032,-0.0753,0.0097,,,no clear difference
+step 3,Gradient boosting,H+E+Emb10,0.6888,0.6381,0.7385,-0.0445,-0.0889,-0.0021,,,worse
