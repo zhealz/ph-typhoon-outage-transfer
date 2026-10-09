@@ -2,8 +2,7 @@
 
 A pilot study of whether publicly available, pre-event data can predict which municipalities stay without power for more than a week after a typhoon, and whether those predictions transfer to storms the model has never seen. Outage labels come from NASA Black Marble nighttime lights, calibrated against placebo runs, for four typhoons (2018–2021) and 1,358 municipality–storm pairs.
 
-**Author:** Zixiao (Heal) Zhuang, M.A. candidate in Environmental Policy and Management, Middlebury Institute of International Studies at Monterey
-
+**Author:** Zixiao (Heal) Zhuang, M.A. candidate in Environmental Policy and Management, Middlebury Institute of International Studies
 ## Key findings
 
 **1. Nighttime lights measure week-long outages, not short ones.** After placebo calibration, 50–90% of measured municipalities within 30 km of a track stayed dark for more than 7 days, against 2.4–3.3% of all municipalities in placebo runs with no storm. The shortest outage detected lasted 3.4 days. In 60% of municipality–storm pairs, too few built-up pixels were lit to measure anything.
