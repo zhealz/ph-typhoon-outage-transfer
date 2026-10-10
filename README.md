@@ -2,7 +2,8 @@
 
 A pilot study of whether publicly available, pre-event data can predict which municipalities stay without power for more than a week after a typhoon, and whether those predictions transfer to storms the model has never seen. Outage labels come from NASA Black Marble nighttime lights, calibrated against placebo runs, for four typhoons (2018–2021) and 1,358 municipality–storm pairs.
 
-**Author:** Zixiao (Heal) Zhuang, M.A. candidate in Environmental Policy and Management, Middlebury Institute of International Studies
+**Author:** Zixiao (Heal) Zhuang, M.A. candidate in Environmental Policy and Management, Middlebury Institute of International Studies at Monterey
+
 ## Key findings
 
 **1. Nighttime lights measure week-long outages, not short ones.** After placebo calibration, 50–90% of measured municipalities within 30 km of a track stayed dark for more than 7 days, against 2.4–3.3% of all municipalities in placebo runs with no storm. The shortest outage detected lasted 3.4 days. In 60% of municipality–storm pairs, too few built-up pixels were lit to measure anything.
@@ -27,6 +28,16 @@ Can publicly available pre-event data predict municipal-level nighttime-light re
 - **RQ2 (Transferability):** How much does predictive skill drop when models are tested on a held-out typhoon or region instead of a random split? Do geospatial foundation-model embeddings narrow that gap?
 - **RQ3 (Equity):** Are prediction errors systematically larger for poorer and rural municipalities, and what does that imply for how restoration is prioritized?
 
+![Methodological framework](figures/fig0_methodological_framework.png)
+
+## Method in brief
+
+- **Storms.** Mangkhut (2018), Kammuri (2019), Phanfone (2019) and Rai (2021), kept because their outages fell off clearly with distance from the track; Haiyan (2013) is a reference case. Goni and Vamco (2020) and Noru (2022) showed no such gradient, and Kalmaegi (2025) dimmed uniformly at all distances, so they were excluded.
+- **Labels.** Daily Black Marble radiance (VNP46A2, BRDF-corrected) averaged over each municipality's built-up pixels (GHSL 2020, built-up share ≥ 3%). Cloudy pixels and nights with more than 80% lunar illumination are dropped. Each municipality is compared with its own 120-day pre-storm baseline, using weekly medians and three-night rolling medians. A municipality needs at least 8 lit built-up pixels to be measured.
+- **Placebo calibration.** The same pipeline runs on a fake landfall one or two lunar months earlier. For each storm, the outage threshold is the most lenient share of baseline light that keeps placebo false positives at or below 5% (70% Mangkhut, 60% Phanfone, 50% Kammuri and Rai). The target is an outage longer than 7 days.
+- **Predictors.** Hazard: peak wind from a modified Rankine vortex on IBTrACS tracks, hours of gale-force wind, distance to track, 3-day GPM IMERG rainfall. Exposure: population density, built-up share, pre-storm light, elevation, distance to coast, area. Spatial context: mean wind in the six nearest municipalities, island size. Utility: storm burden across the service area, customer count, private or cooperative. Embeddings: AlphaEarth annual embeddings, reduced to 3 or 10 principal components inside each training fold.
+- **Validation.** Logistic regression and gradient boosting, each scored on random 5-fold splits, province blocks and leave one typhoon out. Paired bootstrap intervals (1,000 resamples of municipalities within each storm) compare every feature set with the hazard-only model. Residuals are tested for spatial clustering (Moran's I, 6 nearest neighbours) and for clustering by utility and province (η², permutation test).
+
 ## Repository layout
 
 | Path | Contents |
@@ -40,14 +51,6 @@ Can publicly available pre-event data predict municipal-level nighttime-light re
 | `figures/` | The three figures above plus `fig2_labels.png` (real versus placebo outage shares) |
 | `scripts/make_brief_figures.py` | Rebuilds the figures from `results/` |
 | `docs/data_sources.md` | Every input dataset, with its Earth Engine ID or URL |
-
-## Method in brief
-
-- **Storms.** Mangkhut (2018), Kammuri (2019), Phanfone (2019) and Rai (2021), kept because their outages fell off clearly with distance from the track; Haiyan (2013) is a reference case. Goni and Vamco (2020) and Noru (2022) showed no such gradient, and Kalmaegi (2025) dimmed uniformly at all distances, so they were excluded.
-- **Labels.** Daily Black Marble radiance (VNP46A2, BRDF-corrected) averaged over each municipality's built-up pixels (GHSL 2020, built-up share ≥ 3%). Cloudy pixels and nights with more than 80% lunar illumination are dropped. Each municipality is compared with its own 120-day pre-storm baseline, using weekly medians and three-night rolling medians. A municipality needs at least 8 lit built-up pixels to be measured.
-- **Placebo calibration.** The same pipeline runs on a fake landfall one or two lunar months earlier. For each storm, the outage threshold is the most lenient share of baseline light that keeps placebo false positives at or below 5% (70% Mangkhut, 60% Phanfone, 50% Kammuri and Rai). The target is an outage longer than 7 days.
-- **Predictors.** Hazard: peak wind from a modified Rankine vortex on IBTrACS tracks, hours of gale-force wind, distance to track, 3-day GPM IMERG rainfall. Exposure: population density, built-up share, pre-storm light, elevation, distance to coast, area. Spatial context: mean wind in the six nearest municipalities, island size. Utility: storm burden across the service area, customer count, private or cooperative. Embeddings: AlphaEarth annual embeddings, reduced to 3 or 10 principal components inside each training fold.
-- **Validation.** Logistic regression and gradient boosting, each scored on random 5-fold splits, province blocks and leave one typhoon out. Paired bootstrap intervals (1,000 resamples of municipalities within each storm) compare every feature set with the hazard-only model. Residuals are tested for spatial clustering (Moran's I, 6 nearest neighbours) and for clustering by utility and province (η², permutation test).
 
 ## Reproducing the analysis
 
